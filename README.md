@@ -2,13 +2,7 @@
 
 ## Prerequisites
 
-This exercise uses Pyspark. To install it, run:
-
-```bash
-pip3 install pyspark
-```
-
-To test solutions, run the following commands. Note that the execution may take minutes per query, therefore you may want to limit the number of lines in `queries-test`.
+This exercise uses Pyspark. To test solutions, run the following commands. Note that the execution may take minutes per query, therefore you may want to limit the number of lines in `queries-test`.
 
 ```bash
 time python3 reorg.py /opt/lsde/dataset-sf100-csvs/
