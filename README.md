@@ -11,8 +11,8 @@ pip3 install pyspark
 To test solutions, run the following commands. Note that the execution may take minutes per query, therefore you may want to limit the number of lines in `queries-test`.
 
 ```bash
-time python3 reorg.py /opt/lsde/dataset-sf100-bidirectional/
-time python3 cruncher.py /opt/lsde/dataset-sf100-bidirectional/ queries-test.csv out.csv
+time python3 reorg.py /opt/lsde/dataset-sf100-csvs/
+time python3 cruncher.py /opt/lsde/dataset-sf100-csvs/ queries-test.csv out.csv
 ```
 
 Compare the results with the expected output using:
