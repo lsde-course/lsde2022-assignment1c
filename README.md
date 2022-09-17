@@ -1,18 +1,13 @@
 # Assignment 1c – Spark
 
-## Prerequisites
+## Testing the solutions
 
-This exercise uses Pyspark. To install it, run:
 
-```bash
-pip3 install pyspark
-```
-
-To test solutions, run the following commands. Note that the execution may take minutes per query, therefore you may want to limit the number of lines in `queries-test`.
+To test solutions, run the following commands. Note that the execution may take minutes per query, therefore you may want to limit the number of lines in `queries-test.csv`.
 
 ```bash
-time python3 reorg.py /opt/lsde/dataset-sf100-bidirectional/
-time python3 cruncher.py /opt/lsde/dataset-sf100-bidirectional/ queries-test.csv out.csv
+time python3 reorg.py /opt/lsde/dataset-sf100-csvs/
+time python3 cruncher.py /opt/lsde/dataset-sf100-csvs/ queries-test.csv out.csv
 ```
 
 Compare the results with the expected output using:
@@ -26,7 +21,7 @@ The submission system will perform the same operations (with different queries).
 
 ## Jupyter notebook
 
-There is a Jupyter notebook available (`lsde2021-assignment-1c.ipynb`) to run interactive experiments in your browser. To run it, issue:
+There is a Jupyter notebook available (`assignment-1c.ipynb`) to run interactive experiments in your browser. To run it, issue:
 
 ```bash
 jupyter notebook
@@ -38,4 +33,4 @@ And use the resulting URL on 127.0.0.1 (`http://127.0.0.1:8888?token=...`). This
 
 ## Data set
 
-This assignment only uses the SF100 data set, which is (before reorg) stored in CSV format.
+This assignment only uses the SF100 data set, which is stored in CSV format (before reorg).
