@@ -103,6 +103,8 @@ def main():
 
     spark = SparkSession.builder.getOrCreate()
 
+    run_cruncher(spark, datadir, query_file_path, results_file_path)
+
 
 if __name__ == "__main__":
     main()
