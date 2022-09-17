@@ -57,21 +57,13 @@ def cruncher(spark, datadir, a1, a2, a3, a4, d1, d2):
     return ret
 
 
-def main():
-    if len(sys.argv) < 4:
-        print("Usage: cruncher.py [datadir] [query file] [results file]")
-        sys.exit()
-
-    datadir = sys.argv[1]
-    query_file_path = sys.argv[2]
-    results_file_path = sys.argv[3]
-
-    spark = SparkSession.builder.getOrCreate()
-
+def run_cruncher(spark, datadir, query_file_path, results_file_path, number_of_queries = 10):
     query_file = open(query_file_path, 'r')
     results_file = open(results_file_path, 'w')
 
+    i = 0
     for line in query_file.readlines():
+        i = i + 1
         q = line.strip().split("|")
 
         # parse rows like: 1|1989|1990|5183|1749|2015-04-09|2015-05-09
@@ -89,9 +81,27 @@ def main():
         # write rows like: Query.id|TotalScore|P|F
         for row in result.collect():
             results_file.write(f"{qid}|{row[0]}|{row[1]}|{row[2]}\n")
+        
+        if i >= number_of_queries:
+            break
 
     query_file.close()
     results_file.close()
+
+    # return the last result
+    return result
+
+
+def main():
+    if len(sys.argv) < 4:
+        print("Usage: cruncher.py [datadir] [query file] [results file]")
+        sys.exit()
+
+    datadir = sys.argv[1]
+    query_file_path = sys.argv[2]
+    results_file_path = sys.argv[3]
+
+    spark = SparkSession.builder.getOrCreate()
 
 
 if __name__ == "__main__":

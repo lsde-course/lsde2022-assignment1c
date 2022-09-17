@@ -13,11 +13,10 @@ time python3 cruncher.py /opt/lsde/dataset-sf100-csvs/ queries-test.csv out.csv
 Compare the results with the expected output using:
 
 ```bash
-diff queries-test-output-sf100.csv out.csv
+diff queries-test-output-sf100-all.csv out.csv
 ```
 
 The submission system will perform the same operations (with different queries).
-
 
 ## Jupyter notebook
 
